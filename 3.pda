@@ -1,0 +1,20 @@
+States: qstart q$ qloop qaccept q1 q2 q3 q4
+StartState: qstart
+AcceptStates: qaccept
+InputAlphabet: 1 0
+StackAlphabet: 1 0 S R
+
+qstart - - > q$ $
+q$ - - > qloop s
+qloop 1 1 > qloop -
+qloop 0 0 > qloop -
+qloop R S > qloop -
+qloop S 1 > qloop -
+qloop - R > q1 1
+q1 - - > q2 0
+q2 - - > qloop 1
+qloop - S > q3 0
+q3 - - > q4 S
+q4 - - > q5 0
+q5 - - > qloop
+qloop - $ > qaccept - 

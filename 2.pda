@@ -1,0 +1,13 @@
+States: q1 q2 q3 q4 q5
+StartState: q1
+AcceptStates: q4
+InputAlphabet: x y z
+StackAlphabet: totalNumberOfXAndY $
+
+q1 - - > q2 $
+q2 x - > q2 totalNumberOfXAndY
+q2 - - > q3 -
+q3 y - > q3 totalNumberOfXAndY
+q3 - - > q4 -
+q4 z totalNumberOfXAndY > q4 -
+q4 - $ > q5 -
